@@ -16,11 +16,14 @@
     "updates": "ncu -i --format group"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.8.1",
     "cache": "^3.0.0",
     "clean": "^4.0.2",
     "next": "15.3.2",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-redux": "^9.2.0",
+    "zod": "^3.24.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
