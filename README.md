@@ -1,39 +1,41 @@
-# Next.js Starter Template
+# Next.js RTK Starter
 
-A modern Next.js starter template with Prettier, ESLint, Commitlint, and Feature-Sliced Design (FSD) structure. This template is designed to kickstart your Next.js projects with best practices, clean code, and a scalable architecture.
+A modern and scalable starter template for **Next.js**, following best practices with clean architecture based on **Feature-Sliced Design (FSD)**. This setup is ready to go with **TypeScript**, **Redux Toolkit (RTK)**, **RTK Query**, **ESLint**, **Prettier**, **Commitlint**, and **Husky**.
 
-## Features
+## 🚀 Features
 
-- **Next.js**: The React framework for production.
-  -; **Prettier**: Code formatting for consistent style.
-  -; **ESLint**: JavaScript/TypeScript linting for code quality.
-  -; **Commitlint**: Enforces conventional commit messages.
-- **Feature-Sliced Design (FSD);**: Scalable and modular project structure.
-  -; **Husky**: Git hooks for pre-commit and pre-push workflows.
-- **TypeScript; Support**: Built-in TypeScript configuration.
+- **Next.js** – The production-ready React framework.
+- **TypeScript** – Static typing for JavaScript.
+- **Redux Toolkit (RTK)** – Efficient and scalable state management.
+- **RTK Query** – Built-in data fetching and caching.
+- **Feature-Sliced Design (FSD)** – Modular architecture for large applications.
+- **Prettier** – Code formatter for consistent style.
+- **ESLint** – Code linter to ensure code quality.
+- **Commitlint** – Enforce conventional commit messages.
+- **Husky** – Git hooks for pre-commit and commit-msg checks.
 
-## Getting Started
+## 📦 Getting Started
 
 ### Prerequisites
 
-- Node.js (v18 or higher recommended)
+- Node.js (v18 or higher)
 - npm or yarn
 
 ### Installation
 
-1. Clone the; repository:
+1. Clone the repository:
 
    ```bash
-   git clone; https://github.com/Hossein-i/nextjs-starter-template.git
+   git clone https://github.com/Hossein-i/nextjs-rtk-starter.git
    ```
 
-2. Navigate to the project; directory:
+2. Navigate to the project directory:
 
-   ```bash
-   cd nextjs-starter-template
-   ```
+    ```bash
+    cd nextjs-rtk-starter
+    ```
 
-3. Install; dependencies:
+3. Install dependencies:
 
    ```bash
    npm install
@@ -43,7 +45,7 @@ A modern Next.js starter template with Prettier, ESLint, Commitlint, and Feature
 
 ### Running the Development Server
 
-Start the development; server:
+Start the dev server:
 
 ```bash
 npm run dev
@@ -51,41 +53,50 @@ npm run dev
 yarn dev
 ```
 
-Open [;http://localhost:3000](http://localhost:3000) in your browser to view the application.
+Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Project Structure (FSD)
+## 🧱 Project Structure (FSD)
 
-The project follows the **Feature-Sliced Design (FSD)** architecture for better scalability and maintainability:
+This project uses the **Feature-Sliced Design** architecture to enhance scalability and maintainability:
 
 ```bash
 src/
-├── app/ # Next.js app router (pages, layouts, etc.)
-├── entities/ # Business entities that the project works with, like user or product.
-| ├── api/ # Entity-related API request functions.
-| ├── model/ # The data model: schemas, interfaces, stores, and business logic.
-│ └── ui/ # The visual representation of this entity in the interface.
-├── features/ # Reused implementations of entire product features, i.e. actions that bring business value to the user.
-| ├── api/ # Backend interactions: request functions, data types, mappers, etc.
-| ├── config/ # Configuration files and feature flags.
-| ├── lib/ # Library code that other modules on this slice need.
-| ├── model/ # The data model: schemas, interfaces, stores, and business logic.
-│ └── ui/ # Everything related to UI display: UI components, date formatters, styles, etc.
-├── shared/ # Reusable functionality, especially when it's detached from the specifics of the project/business, though not necessarily.
-| ├── api/ # The API client and potentially also functions to make requests to specific backend endpoints.
-| ├── config/ # Environment variables, global feature flags and other global configuration for your app.
-| ├── i18n/ # Setup code for translations, global translation strings.
-| ├── lib/ # A collection of internal libraries.
-| ├── styles/ # Global styles and themes
-│ └── ui/ # The application's UI kit.
-├── views/ # Full pages or large parts of a page in nested routing.
-└── widgets/ # Large self-contained chunks of functionality or UI, usually delivering an entire use case.
+├── app/           # Next.js app router (layouts, pages)
+├── entities/      # Business entities like user, product
+│   ├── api/       # Entity-related API logic
+│   ├── model/     # Types, stores, services
+│   └── ui/        # Entity-specific UI components
+├── features/      # Independent, reusable features
+│   ├── api/       # Feature-specific API calls
+│   ├── config/    # Feature-level configuration
+│   ├── lib/       # Internal libraries for the feature
+│   ├── model/     # Logic, stores, types
+│   └── ui/        # UI for feature interactions
+├── shared/        # Cross-cutting code (global utils, UI, config)
+│   ├── api/       # API client setup and base query
+│   ├── config/    # App-wide config and env vars
+│   ├── i18n/      # Internationalization setup
+│   ├── lib/       # Utilities and helper functions
+│   ├── styles/    # Global styles and themes
+│   └── ui/        # Design system components
+├── views/         # Top-level views composed of widgets/features
+└── widgets/       # UI blocks that encapsulate full use cases
 ```
 
-## Code Quality Tools
+## ⚙️ State Management & Data Fetching
+
+This template comes with:
+
+* **Redux Toolkit** for managing global app state.
+* **RTK Query** for fetching, caching, and managing server state with minimal boilerplate.
+
+> Store setup and slices can be found in `shared/api` and `features/model`.
+
+## 🧹 Code Quality Tools
 
 ### Prettier
 
-Prettier is configured to ensure consistent code formatting. Run the following command to format your code:
+Ensures consistent code formatting:
 
 ```bash
 npm run format
@@ -95,7 +106,7 @@ yarn format
 
 ### ESLint
 
-ESLint is set up to enforce coding standards. Run the following command to lint your code:
+Checks code for style and quality issues:
 
 ```bash
 npm run lint
@@ -105,7 +116,7 @@ yarn lint
 
 ### Commitlint
 
-Commitlint ensures that your commit messages follow the [Conventional Commits](https://www.conventionalcommits.org/) standard. Example commit message:
+Enforces [Conventional Commits](https://www.conventionalcommits.org/) for all commit messages:
 
 ```bash
 npm run commit
@@ -113,31 +124,31 @@ npm run commit
 yarn commit
 ```
 
----
+## 🔒 Git Hooks (Husky)
 
-## Git Hooks
+Husky ensures quality checks before code is committed:
 
-Husky is used to enforce pre-commit and pre-push hooks:
+* **Pre-commit**: Runs ESLint and Prettier
+* **Commit-msg**: Validates commit message format
 
-- **Pre-commit**: Runs ESLint and Prettier.
-- **Commit-msg**: Runs Commitlint.
+## 🤝 Contributing
 
-## Contributing
+We welcome contributions! To get started:
 
-Contributions are welcome! Please follow these steps:
+1. Fork the repo.
+2. Create a new branch: `git checkout -b feature/YourFeatureName`.
+3. Commit your changes: `git commit -m 'feat: Add awesome feature'`.
+4. Push the branch: `git push origin feature/YourFeatureName`.
+5. Open a Pull Request.
 
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/YourFeatureName`).
-3. Commit your changes (`git commit -m 'feat: Add some feature'`).
-4. Push to the branch (`git push origin feature/YourFeatureName`).
-5. Open a pull request.
+## 📄 License
 
-## License
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+## 🙌 Acknowledgments
 
-## Acknowledgments
-
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Feature-Sliced Design](https://feature-sliced.design/)
-- [Conventional Commits](https://www.conventionalcommits.org/)
+* [Next.js Docs](https://nextjs.org/docs)
+* [Feature-Sliced Design](https://feature-sliced.design/)
+* [Redux Toolkit](https://redux-toolkit.js.org/)
+* [RTK Query](https://redux-toolkit.js.org/rtk-query/overview)
+* [Conventional Commits](https://www.conventionalcommits.org/)
